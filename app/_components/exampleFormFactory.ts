@@ -6,5 +6,18 @@ export const exampleFormFactory = createFormFactory({
   defaultValues: {
     name: "",
     email: "",
+    w,
+  },
+  onServerValidate({ value }) {
+    let errors = [];
+
+    if (value.name == "test") {
+      errors.push("Server validation: すでに登録されている名前です");
+    }
+    if (value.email == "test@example.com") {
+      errors.push("Server validation: すでに登録されているメールアドレスです");
+    }
+
+    return errors.join(", ");
   },
 });
