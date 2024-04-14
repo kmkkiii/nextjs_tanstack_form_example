@@ -6,7 +6,6 @@ export const exampleFormFactory = createFormFactory({
   defaultValues: {
     name: "",
     email: "",
-    w,
   },
   onServerValidate({ value }) {
     let errors = [];
